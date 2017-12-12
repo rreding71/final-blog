@@ -1,0 +1,14 @@
+---
+title: Other projects
+author: Ryan Reding
+date: '2017-12-05'
+slug: other-projects
+categories:
+  - rstudio
+tags:
+  - html
+---
+I am going to put the link to my github website about how to use SQL in here again for reference:
+
+
+And then I am going to add the link for another on of my github websites, which I am using to explore dashboards! Come see what I'm doing, and don't forget that you can always email me or find me on social media to get in contact!

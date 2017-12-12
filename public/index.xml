@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryan&#39;s blog</title>
+    <link>/</link>
+    <description>Recent content on Ryan&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project 1</title>
+      <link>/project/project1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 2</title>
+      <link>/project/project2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 3</title>
+      <link>/project/project3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 4</title>
+      <link>/project/project4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/project4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bar Plot</title>
+      <link>/post/bar-plot/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/bar-plot/</guid>
+      <description>In this blog I will be walking you through the steps to creating a barplot using RStudio. As always the firt step is to bring in the packages we will need to complete this using the library command:
+library(Lahman)library(sqldf)library(ggplot2)Step two is extracting the data. For this example we wioll be looking at the 1980 baseball teams homerun distribution. We can gather this data from the Lahman tables using an sqldf query.</description>
+    </item>
+    
+    <item>
+      <title> Histograms</title>
+      <link>/post/histograms/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/histograms/</guid>
+      <description>Histograms what people often think of as bar graphs. They show the spread and shape of a single set of data. For our example, let’s look at the weights of MLB players through the Master table in the Lahman database. While some weights aren’t available, the program with automatically exclude those rows, which do not have a numerical value.
+library(Lahman)library(sqldf)library(ggplot2)Here is the sql request:
+query&amp;lt;-&amp;quot;SELECT weight FROM Master&amp;quot;result&amp;lt;-sqldf(query)Turning the data into a histogram is very similar to turning data into a scatterplot.</description>
+    </item>
+    
+    <item>
+      <title>Other projects</title>
+      <link>/post/other-projects/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/other-projects/</guid>
+      <description>Other projectscode{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/post/time-series/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series/</guid>
+      <description>A time series is similar to a scatterplot, in the way that it has two sets of data against each other. However, one of those sets of data is time.
+library(Lahman)library(sqldf)library(ggplot2)We will look at Babe Ruth’s homeruns over his twenty-two seasons. Here is the sql request:
+query&amp;lt;-&amp;quot;SELECT yearID,HR FROM Batting WHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;result&amp;lt;-sqldf(query)Now, we will put it into the time series visualization! This process is almost exactly the same as the process we used for scatterplots.</description>
+    </item>
+    
+    <item>
+      <title>scatterplot</title>
+      <link>/post/scatterplot/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/scatterplot/</guid>
+      <description>First you must set up your libraries
+library(Lahman)library(sqldf)library(ggplot2)Next, we are going to specify what we are looking for. In this case, career homeruns and strikeouts from players who had more than 400 homeruns. Only the best for us.
+query&amp;lt;-&amp;quot;SELECT playerID,sum(HR),sum(SO)FROM Batting GROUP BY playerIDHAVING sum(HR)&amp;gt;400&amp;quot;sqldf(query)## playerID sum(HR) sum(SO)## 1 aaronha01 755 1383## 2 bagweje01 449 1558## 3 bankser01 512 1236## 4 beltrad01 445 1584## 5 beltrca01 421 1693## 6 bondsba01 762 1539## 7 cabremi01 446 1516## 8 cansejo01 462 1942## 9 dawsoan01 438 1509## 10 delgaca01 473 1745## 11 dunnad01 462 2379## 12 evansda01 414 1410## 13 foxxji01 534 1311## 14 gehrilo01 493 790## 15 giambja01 440 1572## 16 gonzaju03 434 1273## 17 griffke02 630 1779## 18 guerrvl01 449 985## 19 jacksre01 563 2597## 20 jonesan01 434 1748## 21 jonesch06 468 1409## 22 killeha01 573 1699## 23 kingmda01 442 1816## 24 konerpa01 439 1391## 25 mantlmi01 536 1710## 26 matheed01 512 1487## 27 mayswi01 660 1526## 28 mccovwi01 521 1550## 29 mcgrifr01 493 1882## 30 mcgwima01 583 1596## 31 murraed02 504 1516## 32 musiast01 475 696## 33 ortizda01 541 1750## 34 ottme01 511 896## 35 palmera01 569 1348## 36 piazzmi01 427 1113## 37 pujolal01 591 1053## 38 ramirma02 555 1813## 39 ripkeca01 431 1305## 40 robinfr02 586 1532## 41 rodrial01 696 2287## 42 ruthba01 714 1330## 43 schmimi01 548 1883## 44 sheffga01 509 1171## 45 snidedu01 407 1237## 46 soriaal01 412 1803## 47 sosasa01 609 2306## 48 stargwi01 475 1936## 49 teixema01 409 1441## 50 thomafr04 521 1397## 51 thomeji01 612 2548## 52 willibi01 426 1046## 53 willite01 521 709## 54 winfida01 465 1686## 55 yastrca01 452 1393We have the information.</description>
+    </item>
+    
+  </channel>
+</rss>
